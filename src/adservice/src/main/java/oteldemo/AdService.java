@@ -245,8 +245,10 @@ public final class AdService {
 
     // put the span into context, so if any child span is started the parent will be set properly
     try (Scope ignored = span.makeCurrent()) {
-
+      
       Collection<Ad> allAds = adsMap.values();
+            //DYNATRACE ADDED: let's simulate a database call without query filters that brings a 10 Mb payload 
+       byte[] longListOfAds =  new byte[50000000];
       for (int i = 0; i < MAX_ADS_TO_SERVE; i++) {
         ads.add(Iterables.get(allAds, random.nextInt(allAds.size())));
       }

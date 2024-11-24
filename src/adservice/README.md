@@ -3,6 +3,9 @@
 The Ad service provides advertisement based on context keys. If no context keys
 are provided then it returns random ads.
 
+This service has been modified with a memory error for this branch.
+
+
 ## Building Locally
 
 The Ad service requires at least JDK 17 to build and uses gradlew to
